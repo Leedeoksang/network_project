@@ -1,0 +1,28 @@
+#header {
+  margin: 6px 12px 6px;
+  background-color: yellow;
+}
+#main-view {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  min-height: 700px;
+
+  .item {
+    margin: 8px 12px 8px;
+  }
+
+  #player-list {
+    width: 250px;
+  }
+
+  #chat-field {
+    -webkit-flex: auto;
+    flex: auto;
+  }
+
+  #votting-field {
+    width: 250px;
+  }
+}
