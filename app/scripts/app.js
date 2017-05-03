@@ -14,7 +14,8 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ngSocket'
   ])
   .config(function ($routeProvider) {
     $routeProvider

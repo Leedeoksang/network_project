@@ -9,10 +9,5 @@
  */
 angular.module('networkProjectApp')
   	.service('utils', function () {
-
-    	this.connect = function () {
-
-    	};
-
-
+  		
   	});

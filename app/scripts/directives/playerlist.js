@@ -12,7 +12,7 @@ angular.module('networkProjectApp')
       		templateUrl: './views/playerlist.html',
       		restrict: 'E',
       		link: function postLink(scope, element, attrs) {
-    	
+    			
 
     		}
     	};
