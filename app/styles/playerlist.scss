@@ -1,18 +1,51 @@
 #player-list-head {
 	height: 5%;
-	background-color: red;
+	background-color: #cedcdf;
 	text-align: center;
+	color: #525859;
+	vertical-align: middle;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 1px;
 	padding-top: 5%;
+	border-radius: 2px;
 }
 
 #player-list-container {
 	height: 80%;
 	margin-top: 1%;
-	background-color: green;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #cedcdf;
 	text-align: center;
-	padding-top: 5%;
+	padding-top: 1%;
+	border-radius: 2px;
 }
 
-#player-box{
-	
+.players {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+	color: #888;
+}
+
+.playertxt{
+	vertical-align: middle;
+}
+
+.players li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.players .text {
+  position: relative;
+  top: -3px;
 }

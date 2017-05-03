@@ -13,7 +13,8 @@ angular.module('networkProjectApp')
       		templateUrl: './views/playerlist.html',
       		restrict: 'E',
       		link: function postLink(scope, element, attrs) {
-            scope.testarray = [{name: "test1", role: "role1"}, {name: "test2", role: "role2"}];
+            scope.name = 'player1';
+            scope.role = 'Doctor';
     		}
     	};
   	});
