@@ -14,12 +14,15 @@ angular.module('networkProjectApp')
       		restrict: 'E',
       		link: function postLink(scope, element, attrs) {
             scope.players = [{
-              name: 'Player1'
+              name: 'Player1',
+              role: 'Doctor'
             },{
-              name: 'Player2'
+              name: 'Player2',
+              role: 'Sheriff'
+            },{
+              name: 'Player3',
+              role: 'Civilian'
             }]
-            scope.name = 'Player1';
-            scope.role = 'Doctor';
     		}
     	};
   	});
