@@ -13,6 +13,11 @@ angular.module('networkProjectApp')
       		templateUrl: './views/playerlist.html',
       		restrict: 'E',
       		link: function postLink(scope, element, attrs) {
+            scope.players = [{
+              name: 'Player1'
+            },{
+              name: 'Player2'
+            }]
             scope.name = 'Player1';
             scope.role = 'Doctor';
     		}
