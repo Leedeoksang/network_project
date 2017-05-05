@@ -1,3 +1,12 @@
+<div id="player-list-head">
+  Players List
+</div>
 <div id="player-list-container">
-player list
+  <ol class="players">
+    <li ng-repeat="item in players">
+      <span class="playertxt">
+        {{item.name}} <{{item.role}}>
+      </span>
+    </li>
+  </ol>
 </div>
