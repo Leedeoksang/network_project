@@ -1,4 +1,45 @@
-#chat-field-container {
+#chat-field.item {
 	height: 100%;
-	background-color: blue;
+	vertical-align: middle;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#chat-field-head{
+	height: 36px;
+	background-color: #4d3120;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 20px;
+	font-weight: bold;
+	color: #ffffff;
+	letter-spacing: 1px;
+	padding-top: 10px;
+	border-radius: 2px;
+	padding-left: 30px;
+}
+
+#chat-field-container{
+	background-color: #cccccc;
+	height: 77%;
+	margin-top: 6px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: #4d3120;
+	border-radius: 4px;
+	text-align: center;
+	padding-top: 1%;
+
+}
+
+#chat-here{
+	background-color: #cccccc;
+	height: 5%;
+	margin-top: 6px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: #4d3120;
+	text-align: center;
+	padding-top: 1%;
+	border-radius: 2px;
 }
