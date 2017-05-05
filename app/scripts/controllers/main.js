@@ -19,4 +19,7 @@ angular.module('networkProjectApp')
   			$rootScope.C = data
   		});
 
+  		$scope.test = function () {
+  			socket.send();
+  		};
   	});

@@ -27,6 +27,7 @@ angular.module('networkProjectApp')
   		});
 
   		this.send = function (data) {
+  			console.log('haha');
   			ws.send(data);
   		};
   		
