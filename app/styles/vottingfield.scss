@@ -1,4 +1,31 @@
-#votting-field-container {
-	height: 100%;
-	background-color: orange;
+#ready-field {
+	height: 46px;
+	text-align: center;
+}
+
+.button {
+	position: relative;
+	background-color:#636767;
+	-moz-border-radius:16px;
+	-webkit-border-radius:16px;
+	border-radius:16px;
+	border:1px solid #828585;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:12px 31px;
+	text-decoration:none;
+	text-shadow:2px 2px 0px #0d2908;
+	width: 45%;
+}
+
+.button:hover {
+	background-color:#4c4034;
+}
+.button:active {
+	background-color:#4c4034;
+	position:relative;
+	top:1px;
 }
