@@ -22,10 +22,111 @@
 }
 
 .button:hover {
-	background-color:#4c4034;
+	background-color:#56242a;
 }
 .button:active {
-	background-color:#4c4034;
+	background-color:#56242a;
 	position:relative;
 	top:1px;
+}
+
+#voting-list{
+	margin-top: 9px;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+		text-align: center;
+}
+
+.dropdowna {
+    position: relative;
+    display: block;
+		text-align: center;
+}
+
+.dropbtn {
+    background-color:#4c4034;
+    color: red;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+		width: 100%;
+		margin-bottom: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+		width:100%;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: #6f665c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #5d5348;
+}
+
+.mafia-chat{
+	vertical-align: middle;
+	margin-top: 50%;
+	height: 50%;
+}
+
+#mafia-field-head{
+	background-color: #4d3120;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 20px;
+	font-weight: bold;
+	color: #ffffff;
+	letter-spacing: 1px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 2px;
+	padding-left: 30px;
+}
+
+#mafia-field-container{
+	background-color: #cccccc;
+	height: 65%;
+	margin-top: 6px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: #4d3120;
+	border-radius: 4px;
+	text-align: center;
+	padding-top: 1%;
+
+}
+
+#mafia-here{
+	background-color: #cccccc;
+	height: 12%;
+	margin-top: 6px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: #4d3120;
+	text-align: center;
+	padding-top: 1%;
+	border-radius: 2px;
 }
