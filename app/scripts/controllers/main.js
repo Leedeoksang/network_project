@@ -8,7 +8,7 @@
  * Controller of the networkProjectApp
  */
 angular.module('networkProjectApp')
-  	.controller('MainCtrl', function ($rootScope, $scope, socket) {
+  	.controller('MainCtrl', function ($rootScope, $scope, socket, utils) {
   		$rootScope.$on('A', function (e, data) {
   			$rootScope.A = data
   		});
@@ -19,7 +19,19 @@ angular.module('networkProjectApp')
   			$rootScope.C = data
   		});
 
-  		$scope.test = function () {
-  			socket.send();
-  		};
+  		// $scope.test = function () {
+  		// 	socket.send();
+  		// };
+
+      $scope.init = function () {
+        var userInfo = {};
+
+        userInfo.nickname = 'network';
+        userInfo.occupation = 'Doctor';
+
+        utils.setUserInfo(userInfo);
+      };
+
+      $scope.init();
+
   	});

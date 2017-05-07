@@ -2,8 +2,8 @@
   General Chat Field
 </div>
 <div id="chat-field-container">
-  chat container
+	<span class="chat-text" ng-repeat="chat in data.chatList track by $index">{{getDate(chat.timestamp)}} ({{chat.nickname}}) {{chat.text}}</span>
 </div>
 <div id="chat-here">
-  chat here>
+	<input type="text" ng-model="data.text" ng-keypress="messageSend($event)">
 </div>
