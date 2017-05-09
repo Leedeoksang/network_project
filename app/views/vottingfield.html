@@ -1,23 +1,19 @@
 <div id="ready-field">
-  <button class="button">Ready</button>
+  <button class="button" ng-click="">Ready</button>
   <button class="button">Start</button>
 </div>
 <div id="voting-list">
   <div class="dropdown" id="general">
     <button class="dropbtn">General Voting</button>
       <div class="dropdown-content" id="general">
-        <a href="#">Player1</a>
-        <a href="#">Player2</a>
-        <a href="#">Player3</a>
+        <a ng-repeat="general in data.generalList" ng-bind="general.name" ng-click="clickGeneral(general)"></a>
       </div>
   </div>
 
   <div class="dropdown">
     <button class="dropbtn">Mafia Voting</button>
       <div class="dropdown-content">
-        <a href="#">Player1</a>
-        <a href="#">Player2</a>
-        <a href="#">Player3</a>
+        <a ng-repeat="mafia in data.mafiaList" ng-bind="mafia.name" ng-click="clickMafia(mafia)"></a>
       </div>
   </div>
 </div>
@@ -26,9 +22,9 @@
     Mafia Chat [Credential!]
   </div>
   <div id="mafia-field-container">
-    chat container
+    <span class="chat-text" ng-repeat="chat in data.chatList track by $index">{{getDate(chat.timestamp)}} ({{chat.nickname}}) {{chat.text}}</span>
   </div>
   <div id="mafia-here">
-    chat here>
+    <input type="text" ng-model="data.text" ng-keypress="messageSend($event)">
   </div>
 </div>
