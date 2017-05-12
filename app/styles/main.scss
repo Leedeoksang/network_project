@@ -1,16 +1,58 @@
+#back{
+  background-image: url('../../styles/blood.jpg');
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 #header {
-  height: 40px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-bottom: 10px;
+  height: 80px;
   margin-bottom: 0px;
-  background-color: #323232;
+  background-color: #06000a;
+  position: relative;
+
+  .constianer{
+    left: 20px;
+    top: 10px;
+    position: relative;
+    display: inline-block;
+    max-height: 80px;
+    max-width: 300px;
+  }
+
+  .constianer img{
+    //padding-top: 10px;
+    //padding-left: 20px;
+    max-height: 80px;
+    max-width: 300px;
+  }
+
+  #timer{
+    //position: relative;
+    float: right;
+    display: inline-block;
+    padding-right: 22px;
+    padding-top: 50px;
+    //width: 1200px;
+    //text-align: right;
+    color: yellow;
+    font-size: 20px;
+  }
 }
 
 #main-view {
+  margin-left: -10px;
+  margin-right: -10px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
   min-height: 700px;
-  background-color: #4c4c4c;
+  //background-color: #06000a;
+  padding-top: 5px;
 
   .item {
     margin: 8px 12px 8px;
@@ -18,18 +60,26 @@
 
   #player-list {
     width: 200px;
-    height: 700px;
+    height: 670px;
+    margin-left: 22px;
+    margin-right: 0px;
+    //padding-right: 14px;
+    //border-right-color: white;
+    //border-right-width: 1px;
+    //border-right-style: solid;
   }
 
   #chat-field {
     -webkit-flex: auto;
     width: 700px;
-    //flex: auto;
     height: 700px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   #votting-field {
     width: 300px;
     height: 700px;
+    margin-right: 22px;
   }
 }

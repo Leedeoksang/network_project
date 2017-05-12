@@ -88,12 +88,12 @@
 
 .mafia-chat{
 	vertical-align: middle;
-	margin-top: 50%;
+	margin-top: 30%;
 	height: 50%;
 }
 
 #mafia-field-head{
-	background-color: #4d3120;
+	//background-color: #4d3120;
 	text-align: left;
 	vertical-align: middle;
 	font-size: 20px;
@@ -111,13 +111,16 @@
 	height: 65%;
 	margin-top: 6px;
 	border-style: solid;
-	border-width: 10px;
-	border-color: #4d3120;
+	border-width: 3px;
+	border-color: #e6e6e8;
 	border-radius: 4px;
 	text-align: center;
 	padding-top: 1%;
 	overflow: scroll;
-	
+	background-color: #06000a;
+	opacity: 0.7;
+
+
 	.chat-text {
 		display: inline-block;
 		width: calc(100% - 8px);
@@ -125,23 +128,38 @@
 		line-height: 24px;
 		font-size: 18px;
 		text-align: left;
+		text-align: left;
+		color: #2CF919;
 		padding-left: 8px;
 	}
 }
 
 #mafia-here{
-	background-color: #cccccc;
-	height: 12%;
+	height: 5%;
 	margin-top: 6px;
-	border-style: solid;
-	border-width: 10px;
-	border-color: #4d3120;
-	text-align: center;
-	border-radius: 2px;
+	//border-style: solid;
+	border-width: 1px;
+	border-radius: 4px;
 
 	input {
-		width: calc(100% - 8px);
-		height: 100%;
-		padding-left: 8px;
+		display: block;
+	  margin: 0;
+	  width: 90%;
+		font-family: Arial, Helvetica, sans-serif;
+	  font-size: 18px;
+		color: #c43235;
+	  appearance: none;
+	  box-shadow: none;
+	  border-radius: none;
+		padding: 10px;
+	  border: solid 5px #e6e6e8;
+		border-radius: 4px;
+  	transition: border 0.3s;
+		background: transparent;
+	}
+
+	input:focus,input.focus {
+		outline: none;
+  	border: solid 5px #c43235;
 	}
 }
