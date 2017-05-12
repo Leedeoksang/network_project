@@ -7,14 +7,16 @@
  * # vottingField
  */
 angular.module('networkProjectApp')
-  	.directive('vottingField', function (utils) {
+  	.directive('vottingField', function (utils, socket) {
     	return {
       		templateUrl: './views/vottingfield.html',
       		restrict: 'E',
       		scope: {},
       		link: function postLink(scope, element, attrs) {
       			var userInfo = utils.getUserInfo();
-
+          scope.test = function(){
+            socket.send('ddd');
+          }
     			scope.data = {
     				generalList: [],
     				mafiaList: [],

@@ -9,26 +9,26 @@
  */
 angular.module('networkProjectApp')
   	.service('socket', function (ngSocket) {
-   	// 	var URL = 'ws://119.202.81.165',
-  		// PORT = '8765',
-  		// ws;
-  	
-  		// ws = ngSocket(URL + ':' + PORT)
+   		var URL = 'ws://141.223.202.206',
+  		PORT = '9001',
+  		ws;
 
-  		// ws.onMessage(function (data) {
-  		// 	console.log(data)
-  		// 	if (data.type === 'A') {
-  		// 		$rootScope.$emit('A', 'data');
-  		// 	} else if (data.type === 'B') {
-  		// 		$rootScope.$emit('B', 'data');
-  		// 	} else if (data.type === 'C') {
-  		// 		$rootScope.$emit('C', 'data');
-  		// 	}
-  		// });
+  		ws = ngSocket(URL + ':' + PORT)
 
-  		// this.send = function (data) {
-  		// 	console.log('haha');
-  		// 	ws.send(data);
-  		// };
-  		
+  		ws.onMessage(function (data) {
+  			console.log(data)
+  			// if (data.type === 'A') {
+  			// 	$rootScope.$emit('A', 'data');
+  			// } else if (data.type === 'B') {
+  			// 	$rootScope.$emit('B', 'data');
+  			// } else if (data.type === 'C') {
+  			// 	$rootScope.$emit('C', 'data');
+  			// }
+  		});
+
+  		this.send = function (data) {
+  			console.log('haha');
+  			ws.send(data);
+  		};
+
    	});
