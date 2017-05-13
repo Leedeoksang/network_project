@@ -33,10 +33,12 @@ angular.module('networkProjectApp')
     			};  
 
     			scope.ready = function () {
-
+                    var data = {};
+                    socket.ready(data);
     			};
     			scope.start = function () {
-
+                    var data = {};
+                    socket.start(data);
     			};
     			scope.clickGeneral = function (general) {
     				// send general vot
