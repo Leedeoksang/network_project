@@ -14,7 +14,9 @@ angular.module('networkProjectApp')
       		scope: {},
       		link: function postLink(scope, element, attrs) {
       			var userInfo = utils.getUserInfo();
-
+          scope.test = function(){
+            socket.send('ddd');
+          }
     			scope.data = {
     				generalList: [],
     				mafiaList: [],
