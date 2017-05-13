@@ -14,19 +14,18 @@ angular.module('networkProjectApp')
 
       $rootScope.$on('generalchatting', function (e, data) {
         console.log('main general');
-        console.log('main');
-  			$scope.generalchatting.push(data);
+  			$scope.generalchatting.push(data['content']);
         console.log($scope.generalchatting);
   		});
   		$rootScope.$on('mafiachatting', function (e, data) {
         console.log('main mafia');
         $scope.mafiachatting = data;
       });
-      $rootScope.$on('playerlist', function (e, data) {
-        console.log('playerlist');
-        $scope.playerlist = data;
+      $rootScope.$on('player_list', function(e, data){
+        console.log('player list');
+        console.log(data['content'])
+        $scope.playerlist = data['content'];
       });
-     
 
       $scope.init = function () {
         var userInfo = {};

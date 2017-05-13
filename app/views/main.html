@@ -1,15 +1,19 @@
 <div id="back">
   <div id="header">
     <div class="constianer">
-      <img src="http://www.electricsistahood.com/wordpress/wp-content/uploads/2010/06/MAFIA-II-LOGO-BLACK.jpg" />
+      <img src="../../styles/MAFIA_logo.jpg" />
     </div>
     <div id="timer">
       Remaining Time: {min:sec} seconds
     </div>
   </div>
   <div id="main-view">
-    <player-list id="player-list" class="item"></player-list>
+    <player-list id="player-list" class="item" playerlist="playerlist"></player-list>
     <chat-field id="chat-field" class="item" generalchatting="generalchatting"></chat-field>
+    <background id="background" class="item">
+      <img src="../../styles/mafia2.png" />
+    </background>
     <votting-field id="votting-field" class="item" ng-click="test()"></votting-field>
+
   </div>
 </div>

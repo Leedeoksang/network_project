@@ -70,11 +70,17 @@
   }
 
   #chat-field {
-    -webkit-flex: auto;
-    width: 700px;
+    //-webkit-flex: auto;
+    width: 600px;
     height: 700px;
     margin-left: 20px;
-    margin-right: 20px;
+    //margin-right: 20px;
+  }
+
+  #background{
+    margin-left: 0px;
+    width: 200px;
+    height: 700px;
   }
 
   #votting-field {

@@ -13,18 +13,17 @@ angular.module('networkProjectApp')
       // var URL = 'ws://141.223.60.58',
   		PORT = '9001',
   		ws;
-  	
+
   		ws = ngSocket(URL + ':' + PORT);
   		ws.onMessage(function (data) {
-        console.log(data)
         data = JSON.parse(data['data']);
-        console.log(data);
+         console.log(data['content'])
   			if (data.type === 'generalchatting') {
-  				$rootScope.$emit('generalchatting', data['content']);
+  				$rootScope.$emit('generalchatting', data);
   			} else if (data.type === 'mafiachatting') {
   				$rootScope.$emit('mafiachatting', data);
   			} else if (data.type === 'player_list') {
-  				$rootScope.$emit('playerlist', data);
+  				$rootScope.$emit('player_list', data);
   			}
   		});
 

@@ -12,17 +12,13 @@ angular.module('networkProjectApp')
     	return {
       		templateUrl: './views/playerlist.html',
       		restrict: 'E',
+          scope: {
+            "playerlist": '='
+          },
       		link: function postLink(scope, element, attrs) {
-            scope.players = [{
-              name: 'PLAYER I',
-              role: 'Doctor'
-            },{
-              name: 'PLAYER II',
-              role: 'Sheriff'
-            },{
-              name: 'PLAYER III',
-              role: 'Civilian'
-            }]
-    		}
+            // scope.playerlist = [{
+            //   name:
+            // }]
+    		  }
     	};
   	});
