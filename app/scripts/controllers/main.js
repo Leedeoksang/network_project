@@ -11,13 +11,14 @@ angular.module('networkProjectApp')
   	.controller('MainCtrl', function ($rootScope, $scope, socket, utils) {
   		$rootScope.$on('A', function (e, data) {
   			$rootScope.A = data
+        console.log($rootScope.A)
   		});
-  		$rootScope.$on('B', function (e, data) {
-  			$rootScope.B = data
-  		});
-  		$rootScope.$on('C', function (e, data) {
-  			$rootScope.C = data
-  		});
+  		// $rootScope.$on('B', function (e, data) {
+  		// 	$rootScope.B = data
+  		// });
+  		// $rootScope.$on('C', function (e, data) {
+  		// 	$rootScope.C = data
+  		// });
 
   		// $scope.test = function () {
   		// 	socket.send();

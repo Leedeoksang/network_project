@@ -7,7 +7,7 @@
  * # vottingField
  */
 angular.module('networkProjectApp')
-  	.directive('vottingField', function (utils) {
+  	.directive('vottingField', function (utils, socket) {
     	return {
       		templateUrl: './views/vottingfield.html',
       		restrict: 'E',
@@ -28,7 +28,16 @@ angular.module('networkProjectApp')
  	       				nickname: 'test',
         				text: 'test chat'
         			}]
-    			};
+    			};  
+
+                scope.test = function () {
+                    socket.send({
+                        'key': 'A',
+                        'params': {
+                            'num': 1   
+                        }
+                    });
+                };
 
     			scope.ready = function () {
 
