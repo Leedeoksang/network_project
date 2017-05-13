@@ -9,7 +9,7 @@
  */
 angular.module('networkProjectApp')
   	.controller('MainCtrl', function ($rootScope, $scope, socket, utils) {
-  		
+
       $rootScope.$on('generalchatting', function (e, data) {
         console.log('main general');
   			$scope.genearlbroadcast = data;
@@ -17,6 +17,11 @@ angular.module('networkProjectApp')
   		$rootScope.$on('mafiachatting', function (e, data) {
         console.log('main mafia');
         $scope.mafiabroadcast = data;
+      });
+
+      $rootScope.$on('player_list', function(e, data){
+        console.log('player list');
+        $scope.playerlist = data.content;
       });
 
 
