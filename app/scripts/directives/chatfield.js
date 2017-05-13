@@ -16,9 +16,7 @@ angular.module('networkProjectApp')
             },
       		link: function postLink(scope, element, attrs) {
         		var userInfo = utils.getUserInfo();
-                scope.$watch('generalchatting', function (value) {
-                    console.log(value);
-                }, true);
+
         		scope.data = {
         			text: ''
         		};
@@ -31,12 +29,12 @@ angular.module('networkProjectApp')
         				// send function needed
         				now = new Date();
                         data = {
-                            timestamp: now.getTime(),
+                            // timestamp: now.getTime(),
                             occupation: userInfo.occupation,
                             type: 'generalchatting',
                             text: scope.data.text
                         }
-        				scope.data.chatList.push(data);
+        				// scope.generalchatting.push(scope.data.text)
         				scope.data.text = '';
                         socket.send(data);
         				scroller = angular.element(document.querySelector('#chat-field-container'))

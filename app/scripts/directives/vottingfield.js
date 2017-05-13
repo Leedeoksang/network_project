@@ -56,7 +56,7 @@ angular.module('networkProjectApp')
         				// send function needed
         				now = new Date();
         				scope.data.chatList.push({
-        					timestamp: now.getTime(),
+        					// timestamp: now.getTime(),
         					occupation: userInfo.occupation,
                             type: 'mafiachatting',
         					text: scope.data.text
