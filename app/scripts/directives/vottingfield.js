@@ -11,26 +11,26 @@ angular.module('networkProjectApp')
     	return {
       		templateUrl: './views/vottingfield.html',
       		restrict: 'E',
-      		scope: {},
+      		scope: {
+
+            },
       		link: function postLink(scope, element, attrs) {
       			var userInfo = utils.getUserInfo();
-          scope.test = function(){
-            socket.send('ddd');
-          }
+  
     			scope.data = {
     				generalList: [],
     				mafiaList: [],
     				text: '',
         			chatList: [{
         				timestamp: 0,
-        				nickname: 'test',
+        				occupation: 'test',
         				text: 'test chat'
  	       				},{
  	       				timestamp: 0,
- 	       				nickname: 'test',
+ 	       				occupation: 'test',
         				text: 'test chat'
         			}]
-    			};
+    			};  
 
     			scope.ready = function () {
 
@@ -47,17 +47,20 @@ angular.module('networkProjectApp')
 
         		scope.messageSend = function (e) {
         			var now,
-        				scroller;
+        				scroller,
+                        data;
 
         			if (e.key == 'Enter') {
         				// send function needed
         				now = new Date();
         				scope.data.chatList.push({
         					timestamp: now.getTime(),
-        					nickname: userInfo.nickname,
+        					occupation: userInfo.occupation,
+                            type: 'mafiachatting',
         					text: scope.data.text
         				});
         				scope.data.text = '';
+                        ws.send(data);
         				scroller = angular.element(document.querySelector('#mafia-field-container'))
         				scroller[0].scrollTop = scroller[0].scrollHeight;
         			}
