@@ -3,12 +3,20 @@
 	text-align: center;
 }
 
+#ready{
+	right:6px;
+}
+
+#start{
+	left: 6px;
+}
+
 .button {
 	position: relative;
 	background-color:#636767;
-	-moz-border-radius:16px;
-	-webkit-border-radius:16px;
-	border-radius:16px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
 	border:1px solid #828585;
 	display:inline-block;
 	cursor:pointer;
@@ -18,7 +26,9 @@
 	padding:12px 31px;
 	text-decoration:none;
 	text-shadow:2px 2px 0px #0d2908;
-	width: 45%;
+	width: 47%;
+	//margin-right: 5%;
+	//margin-left:5%;
 }
 
 .button:hover {

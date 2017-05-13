@@ -17,6 +17,7 @@ angular.module('networkProjectApp')
   		ws = ngSocket(URL + ':' + PORT);
   		ws.onMessage(function (data) {
         data = JSON.parse(data['data']);
+        console.log(data)
          console.log(data['content'])
   			if (data.type === 'generalchatting') {
   				$rootScope.$emit('generalchatting', data);
