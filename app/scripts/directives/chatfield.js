@@ -7,11 +7,13 @@
  * # chatField
  */
 angular.module('networkProjectApp')
-  	.directive('chatField', function (utils) {
+  	.directive('chatField', function (utils, socket) {
    		return {
       		templateUrl: './views/chatfield.html',
       		restrict: 'E',
-      		scope: {},
+      		scope: {
+                'chatBroadcast': '@'
+            },
       		link: function postLink(scope, element, attrs) {
         		var userInfo = utils.getUserInfo();
 
@@ -19,27 +21,31 @@ angular.module('networkProjectApp')
         			text: '',
         			chatList: [{
         				timestamp: 0,
-        				nickname: 'test',
+        				occupation: 'test',
         				text: 'test chat'
  	       				},{
  	       				timestamp: 0,
- 	       				nickname: 'test',
+ 	       				occupation: 'test',
         				text: 'test chat'
         			}]
         		};
 
         		scope.messageSend = function (e) {
         			var now,
-        				scroller;
+        				scroller,
+                        data;
         			if (e.key == 'Enter') {
         				// send function needed
         				now = new Date();
-        				scope.data.chatList.push({
-        					timestamp: now.getTime(),
-        					nickname: userInfo.nickname,
-        					text: scope.data.text
-        				});
+                        data = {
+                            timestamp: now.getTime(),
+                            occupation: userInfo.occupation,
+                            type: 'generalchatting',
+                            text: scope.data.text
+                        }
+        				scope.data.chatList.push(data);
         				scope.data.text = '';
+                        socket.send(data);
         				scroller = angular.element(document.querySelector('#chat-field-container'))
         				scroller[0].scrollTop = scroller[0].scrollHeight;
         			}
