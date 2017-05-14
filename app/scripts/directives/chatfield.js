@@ -42,6 +42,8 @@ angular.module('networkProjectApp')
         			}
         		};
         		scope.messageReceive = function () {
+                    var scroller;
+                    
         			scroller = angular.element(document.querySelector('#chat-field-container'))
     				scroller[0].scrollTop = scroller[0].scrollHeight;
         		};
