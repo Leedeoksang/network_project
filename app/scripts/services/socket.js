@@ -9,7 +9,7 @@
  */
 angular.module('networkProjectApp')
   	.service('socket', function (ngSocket, $rootScope) {
-   		var URL = 'ws://121.180.237.167',
+   		var URL = 'ws://141.223.205.31',
       // var URL = 'ws://141.223.60.58',
   		PORT = '9001',
   		ws;
@@ -41,7 +41,10 @@ angular.module('networkProjectApp')
         this.send(data);
       }
 
-      this.sendVotting = function () {
+      this.sendvote = function (data) {
+        console.log("sendvote");
+        data.type = 'night_voting';
+        this.send(data);
+      }
 
-      };
    	});
