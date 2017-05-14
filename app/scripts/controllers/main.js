@@ -17,15 +17,19 @@ angular.module('networkProjectApp')
         var scroller;
         console.log('main general');
   			$scope.generalchatting.push(data['content']);
-        scroller = angular.element(document.querySelector('#chat-field-container'))
-        scroller[0].scrollTop = scroller[0].scrollHeight;
+        $timeout(function () {
+          scroller = angular.element(document.querySelector('#chat-field-container'))
+          scroller[0].scrollTop = scroller[0].scrollHeight;
+        },200);
   		});
   		$rootScope.$on('mafiachatting', function (e, data) {
         var scroller;
         console.log('main mafia');
         $scope.mafiachatting.push(data['content']);
-        scroller = angular.element(document.querySelector('#chat-field-container'))
-        scroller[0].scrollTop = scroller[0].scrollHeight;
+        $timeout(function () {
+          scroller = angular.element(document.querySelector('#mafia-field-container'))
+          scroller[0].scrollTop = scroller[0].scrollHeight;
+        },200);
       });
       $rootScope.$on('player_list', function (e, data) {
         console.log('player list');

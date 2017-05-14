@@ -1,7 +1,6 @@
 <div id="back">
   <div id="header">
     <div class="constianer">
-      <img src="../../styles/MAFIA_logo.jpg" />
     </div>
     <div id="timer" ng-show="time">
       Remaining Time: {{time}} seconds
@@ -11,12 +10,19 @@
     </div>
   </div>
   <div id="main-view">
-    <div id="main-disable" ng-show="mainDisable">You are dead!</div>
+    <div id="main-disable" ng-show="mainDisable">
+      <span class="dead-image"></span>
+      <span class="dead-text">You are killed!</span>
+    </div>
+   <!--  <div id="main-disable" ng-show="true">
+      <span class="vot-image"></span>
+      <span class="dead-text">Please wait other players to vot!</span>
+    </div> -->
     <player-list id="player-list" class="item" playerlist="playerlist" victim-list="victimList"></player-list>
     <chat-field id="chat-field" class="item" generalchatting="generalchatting"></chat-field>
-    <background id="background" class="item">
+    <!-- <background id="background" class="item">
       <img src="../../styles/mafia2.png" />
-    </background>
+    </background> -->
     <votting-field id="votting-field" class="item" mafiachatting="mafiachatting" playerlist="playerlist" job="job" day-voting-list="dayVotingList" night-voting-list="nightVotingList"></votting-field>
 
   </div>
