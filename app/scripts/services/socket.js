@@ -18,15 +18,20 @@ angular.module('networkProjectApp')
   		ws.onMessage(function (data) {
         console.log(data);
         data = JSON.parse(data['data']);
-         console.log(data['content']);
   			if (data.type === 'generalchatting') {
   				$rootScope.$emit('generalchatting', data);
   			} else if (data.type === 'mafiachatting') {
   				$rootScope.$emit('mafiachatting', data);
   			} else if (data.type === 'player_list') {
   				$rootScope.$emit('player_list', data);
-  			} else if (data.type === '') {
-          
+  			} else if (data.type === 'job') {
+          $rootScope.$emit('job', data);
+        } else if (data.type == 'time') {
+          $rootScope.$emit('time', data);
+        } else if (data.type === 'day_voting') {
+          $rootScope.$emit('day_voting', data);
+        } else if (data.type === 'night_voting') {
+          $rootScope.$emit('nigh_voting', data);
         }
   		});
 
@@ -42,10 +47,19 @@ angular.module('networkProjectApp')
         data.type = 'gameready';
         this.send(data);
       };
+      this.sendGeneralVote = function (data) {
+        data.type = 'general_votting';
+        this.send(data);
+      };
+      this.sendNightVote = function (data) {
+        data.type = 'night_votting';
+        this.send(data);
+      };
       this.close = function (data) {
         ws.close();
       };
-      this.sendVotting = function () {
-
+      this.sendNightVotting = function () {
+        data.type = 'night_votting';
+        this.send(data);
       };
    	});

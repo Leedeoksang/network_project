@@ -9,7 +9,7 @@
  */
 angular.module('networkProjectApp')
   	.controller('MainCtrl', function ($rootScope, $scope, socket, utils, $window) {
-  		$scope.generalchatting = [];
+  		$scope.generalchatting = ['Please ready! Player1 will start game'];
       $scope.mafiachatting = [];
 
       $rootScope.$on('generalchatting', function (e, data) {
@@ -22,14 +22,27 @@ angular.module('networkProjectApp')
   		$rootScope.$on('mafiachatting', function (e, data) {
         var scroller;
         console.log('main mafia');
-        $scope.mafiachatting.push(data['content']);           
-        scroller = angular.element(document.querySelector('#mafia-field-container'))
+        $scope.mafiachatting.push(data['content']);
+        scroller = angular.element(document.querySelector('#chat-field-container'))
         scroller[0].scrollTop = scroller[0].scrollHeight;
       });
-      $rootScope.$on('player_list', function(e, data){
+      $rootScope.$on('player_list', function (e, data) {
         console.log('player list');
-        console.log(data['content'])
         $scope.playerlist = data['content'];
+      });
+      $rootScope.$on('job', function (e, data) {
+        var job = data['content'];
+        $scope.job = job;
+        utils.setUserJob(job);
+      });
+      $rootScope.$on('day_voting', function (e, data) {
+        $scope.dayVottingList = data['content'];
+      });
+      $rootScope.$on('night_voting', function (e, data) {
+        $scope.nightVottingList = data['content'];
+      });
+      $rootScope.$on('time', function (e, data) {
+        $scope.time = data['content'];
       });
 
       $window.onbeforeunload = function (event) {
@@ -42,10 +55,10 @@ angular.module('networkProjectApp')
       $scope.init = function () {
         var userInfo = {};
 
-        userInfo.nickname = 'network';
-        userInfo.occupation = 'Doctor';
+        // userInfo.nickname = 'network';
+        // userInfo.occupation = 'Doctor';
 
-        utils.setUserInfo(userInfo);
+        // utils.setUserInfo(userInfo);
       };
 
       $scope.init();

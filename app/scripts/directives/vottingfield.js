@@ -13,29 +13,17 @@ angular.module('networkProjectApp')
       		restrict: 'E',
       		scope: {
                 'mafiachatting': '=',
-                'playerlist': '='
+                'dayVottingList': '=',
+                'nightVottingList': '=',
+                'job': '=',
+
             },
       		link: function postLink(scope, element, attrs) {
       			var userInfo = utils.getUserInfo();
-  
+
     			scope.data = {
     				text: ''
     			};  
-
-    			scope.ready = function () {
-                    var data = {};
-                    socket.ready(data);
-    			};
-    			scope.start = function () {
-                    var data = {};
-                    socket.start(data);
-    			};
-    			scope.clickGeneral = function (general) {
-    				// send general vot
-    			};
-    			scope.clickMafia = function (mafia) {
-    				// send mafia vot
-    			};
 
         		scope.messageSend = function (e) {
         			var now,
@@ -45,29 +33,37 @@ angular.module('networkProjectApp')
         			if (e.key == 'Enter') {
         				// send function needed
         				now = new Date();
-        				scope.data.chatList.push({
+        				data ={
         					// timestamp: now.getTime(),
         					occupation: userInfo.occupation,
                             type: 'mafiachatting',
         					text: scope.data.text
-        				});
+        				};
         				scope.data.text = '';
-                        ws.send(data);
+                        socket.send(data);
         				scroller = angular.element(document.querySelector('#mafia-field-container'));
         				scroller[0].scrollTop = scroller[0].scrollHeight;
         			}
         		};
-        		scope.messageReceive = function () {
-                    var scroller;
 
-        			scroller = angular.element(document.querySelector('#mafia-field-container'))
-    				scroller[0].scrollTop = scroller[0].scrollHeight;
-        		};
-
-        		scope.getDate = function (timestamp) {
-        			var date = new Date(timestamp);
-        			return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-        		};
+                scope.ready = function () {
+                    var data = {};
+                    socket.ready(data);
+                };
+                scope.start = function () {
+                    var data = {};
+                    socket.start(data);
+                };
+                scope.clickGeneral = function (general) {
+                    // send general vot
+                };
+                scope.clickMafia = function (mafia) {
+                    var data = {
+                        content: mafia.name
+                    };
+                    socket.sendNightVote(data);
+                    // send mafia vot
+                };
 
         		scope.renew = function () {
     				scope.data.generalList = [{

@@ -1,23 +1,25 @@
 <div id="ready-field">
-  <button class="button" ng-click="ready()">Ready</button>
-  <button class="button" ng-click="start()">Start</button>
+  <button id="ready" class="button" ng-click="ready()">READY</button>
+  <button id="start" class="button" ng-click="start()">START</button>
 </div>
 <div id="voting-list">
+  <div class="vott"
   <div class="dropdown" id="general">
-    <button class="dropbtn">General Voting</button>
+    <button class="dropbtn">GENERAL VOTE</button>
       <div class="dropdown-content" id="general">
-        <a ng-repeat="general in playerlist" ng-bind="general.name" ng-click="clickGeneral(general)"></a>
+        <a ng-repeat="general in playerlist" ng-bind="general" ng-click="clickGeneral(general)"></a>
       </div>
   </div>
 
   <div class="dropdown">
-    <button class="dropbtn">Mafia Voting</button>
+    <button class="dropbtn">MAFIA VOTE</button>
       <div class="dropdown-content">
         <a ng-repeat="mafia in data.mafiaList" ng-bind="mafia.name" ng-click="clickMafia(mafia)"></a>
       </div>
   </div>
 </div>
 <div class="mafia-chat">
+  <div class="mafia-chat-disable" ng-show="job !== 'mafia'">Only for Mafia!</div>
   <div id="mafia-field-head">
     Mafia Chat [Credential!]
   </div>
