@@ -3,8 +3,11 @@
     <div class="constianer">
       <img src="../../styles/MAFIA_logo.jpg" />
     </div>
-    <div id="timer">
-      Remaining Time: {min:sec} seconds
+    <div id="timer" ng-show="time">
+      Remaining Time: {{time}} seconds
+    </div>
+    <div id="timer" ng-show="!time">
+      Game is not started yet! Please press ready!
     </div>
   </div>
   <div id="main-view">
@@ -13,7 +16,7 @@
     <background id="background" class="item">
       <img src="../../styles/mafia2.png" />
     </background>
-    <votting-field id="votting-field" class="item" ng-click="test()"></votting-field>
+    <votting-field id="votting-field" class="item" mafiachatting="mafiachatting" playerlist="playerlist" job="job" day-voting-list="dayVotingList" night-voting-list="nightVotingList"></votting-field>
 
   </div>
 </div>

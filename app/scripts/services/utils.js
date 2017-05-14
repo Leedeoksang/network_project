@@ -11,11 +11,13 @@ angular.module('networkProjectApp')
 	.service('utils', function () {
   		this.userInfo = {};
 
-  		this.setUserInfo = function (userInfo) {
-  			this.userInfo.nickname = userInfo.nickname;
-  			this.userInfo.occupation = userInfo.occupation;
-  		};
-
+  		// this.setUserInfo = function (userInfo) {
+  		// 	this.userInfo.nickname = userInfo.nickname;
+  		// 	this.userInfo.job = userInfo.job;
+  		// };
+      this.setUserJob = function (job) {
+        this.userInfo.job = job;
+      };
   		this.getUserInfo = function () {
   			return this.userInfo;
   		};

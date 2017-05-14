@@ -5,22 +5,23 @@
 <div id="voting-list">
   <select id="repeatSelect" ng-model="data.selected">
     <option value="">GENERAL VOTE</option>
-    <option ng-repeat="general in data.generalList" value="{{general.name}}"  >{{general.name}}</option>
+    <option ng-repeat="general in dayVotingList" value="{{general}}"  >{{general}}</option>
   </select>
 
   <div class="dropdown">
     <button class="dropbtn">MAFIA VOTE</button>
       <div class="dropdown-content">
-        <a ng-repeat="mafia in data.mafiaList" ng-bind="mafia.name" ng-click="clickMafia(mafia)"></a>
+        <a ng-repeat="mafia in nightVotingList" ng-bind="mafia" ng-click="clickMafia(mafia)"></a>
       </div>
   </div>
 </div>
 <div class="mafia-chat">
+  <div class="mafia-chat-disable" ng-show="job !== 'mafia'">Only for Mafia!</div>
   <div id="mafia-field-head">
     Mafia Chat [Credential!]
   </div>
   <div id="mafia-field-container">
-    <span class="chat-text" ng-repeat="chat in data.chatList track by $index">{{getDate(chat.timestamp)}} ({{chat.nickname}}) {{chat.text}}</span>
+    <span class="chat-text" ng-repeat="chat in mafiachatting track by $index">{{chat}}</span>
   </div>
   <div id="mafia-here">
     <input type="text" ng-model="data.text" ng-keypress="messageSend($event)">

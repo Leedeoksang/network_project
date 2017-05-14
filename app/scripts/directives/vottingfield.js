@@ -12,57 +12,29 @@ angular.module('networkProjectApp')
       		templateUrl: './views/vottingfield.html',
       		restrict: 'E',
       		scope: {
+                'mafiachatting': '=',
+                'dayVotingList': '=',
+                'nightVotingList': '=',
+                'job': '=',
 
             },
       		link: function postLink(scope, element, attrs) {
       			var userInfo = utils.getUserInfo();
 
     			scope.data = {
-    				generalList: [],
-    				mafiaList: [],
-    				text: '',
-        			chatList: [{
-        				timestamp: 0,
-        				occupation: 'test',
-        				text: 'test chat'
- 	       				},{
- 	       				timestamp: 0,
- 	       				occupation: 'test',
-        				text: 'test chat'
-        			}]
-    			};
+    				text: ''
+    			};  
 
-    			scope.ready = function () {
-            var data = {};
-            socket.ready(data);
-    			};
-    			scope.start = function () {
-            var data = {};
-            socket.start(data);
-    			};
 
-          // // send general vot
-    			// scope.clickGeneral = function () {
-          //   var data = {
-          //     content: scope.data.selected
-          //   };
-          //   console.log("sendvote");
-          //   socket.sendvote(data);
-    			// };
-
-          scope.$watch('data.selected', function (newValue) {
-            if (newValue) {
-              console.log(newValue);
-              var data = {
-                content: scope.data.selected
-              };
-              socket.sendvote(data);
-            }
-          });
-
-    			scope.clickMafia = function (mafia) {
-    				// send mafia vot
-    			};
+                scope.$watch('data.selected', function (newValue) {
+                    if (newValue) {
+                    console.log(newValue);
+                    var data = {
+                        content: scope.data.selected
+                    };
+                    socket.sendDayVote(data);
+                    }
+                });
 
         		scope.messageSend = function (e) {
         			var now,
@@ -72,27 +44,37 @@ angular.module('networkProjectApp')
         			if (e.key == 'Enter') {
         				// send function needed
         				now = new Date();
-        				scope.data.chatList.push({
-        					timestamp: now.getTime(),
+        				data ={
+        					// timestamp: now.getTime(),
         					occupation: userInfo.occupation,
                             type: 'mafiachatting',
         					text: scope.data.text
-        				});
+        				};
         				scope.data.text = '';
-                        ws.send(data);
-        				scroller = angular.element(document.querySelector('#mafia-field-container'))
+                        socket.send(data);
+        				scroller = angular.element(document.querySelector('#mafia-field-container'));
         				scroller[0].scrollTop = scroller[0].scrollHeight;
         			}
         		};
-        		scope.messageReceive = function () {
-        			scroller = angular.element(document.querySelector('#mafia-field-container'))
-    				scroller[0].scrollTop = scroller[0].scrollHeight;
-        		};
 
-        		scope.getDate = function (timestamp) {
-        			var date = new Date(timestamp);
-        			return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-        		};
+                scope.ready = function () {
+                    var data = {};
+                    socket.ready(data);
+                };
+                scope.start = function () {
+                    var data = {};
+                    socket.start(data);
+                };
+                scope.clickGeneral = function (general) {
+                    // send general vot
+                };
+                scope.clickMafia = function (mafia) {
+                    var data = {
+                        content: mafia.name
+                    };
+                    socket.sendNightVote(data);
+                    // send mafia vot
+                };
 
         		scope.renew = function () {
     				scope.data.generalList = [{

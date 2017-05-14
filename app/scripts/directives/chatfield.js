@@ -16,9 +16,7 @@ angular.module('networkProjectApp')
             },
       		link: function postLink(scope, element, attrs) {
         		var userInfo = utils.getUserInfo();
-                scope.$watch('generalchatting', function (value) {
-                    console.log(value);
-                }, true);
+
         		scope.data = {
         			text: ''
         		};
@@ -30,27 +28,18 @@ angular.module('networkProjectApp')
         			if (e.key == 'Enter') {
         				// send function needed
         				now = new Date();
-                        data = {
-                            timestamp: now.getTime(),
-                            occupation: userInfo.occupation,
-                            type: 'generalchatting',
-                            text: scope.data.text
-                        }
-        				scope.data.chatList.push(data);
+                data = {
+                    // timestamp: now.getTime(),
+                    occupation: userInfo.occupation,
+                    type: 'generalchatting',
+                    text: scope.data.text
+                };
+        				// scope.generalchatting.push(scope.data.text)
         				scope.data.text = '';
-                        socket.send(data);
-        				scroller = angular.element(document.querySelector('#chat-field-container'))
+                socket.send(data);
+        				scroller = angular.element(document.querySelector('#chat-field-container'));
         				scroller[0].scrollTop = scroller[0].scrollHeight;
         			}
-        		};
-        		scope.messageReceive = function () {
-        			scroller = angular.element(document.querySelector('#chat-field-container'))
-    				scroller[0].scrollTop = scroller[0].scrollHeight;
-        		};
-
-        		scope.getDate = function (timestamp) {
-        			var date = new Date(timestamp);
-        			return date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
         		};
       		}
     	};

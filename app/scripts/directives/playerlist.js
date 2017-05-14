@@ -13,7 +13,7 @@ angular.module('networkProjectApp')
       		templateUrl: './views/playerlist.html',
       		restrict: 'E',
           scope: {
-            "playerlist": '='
+            'playerlist': '='
           },
       		link: function postLink(scope, element, attrs) {
             // scope.playerlist = [{
