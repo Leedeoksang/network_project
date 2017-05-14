@@ -9,7 +9,7 @@
  */
 angular.module('networkProjectApp')
   	.service('socket', function (ngSocket, $rootScope) {
-   		var URL = 'ws://141.223.205.31',
+   		var URL = 'ws://121.180.234.187',
       // var URL = 'ws://141.223.60.58',
   		PORT = '9001',
   		ws,

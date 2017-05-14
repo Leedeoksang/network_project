@@ -1,9 +1,8 @@
 #player-list-head {
 	height: 25px;
-	//background-color: white;
 	border-color: #e6e6e8;
 	border-bottom-style: solid;
-	border-width: 1px;
+	border-width: 3px;
 	text-align: center;
 	vertical-align: middle;
 	font-size: 20px;
@@ -13,8 +12,6 @@
 	margin-top: 10px;
 	margin-right: 5px;
 	margin-left: 5px;
-	//padding-right: 10px;
-	//border-radius: 2px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 
@@ -30,17 +27,15 @@
 }
 
 #player-list-container {
-	//background-color: #4d3120;
 	height: 80%;
 	margin-top: 15px;
 	border-style: solid;
 	border-width: 3px;
-	border-color: #e6e6e8;
+	border-color: #FFFFFF;
 	text-align: center;
 	padding-right: 10px;
-	border-radius: 10px;
+	border-radius: 2px;
 	background-color: #06000a;
-	opacity: 0.7;
 }
 
 .players {
@@ -49,7 +44,6 @@
   padding: 0;
   width: 100%;
 	color:  #e6e6e8;
-	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 }
 
@@ -67,11 +61,8 @@
 }
 
 .players li {
-  //cursor: pointer;
   position: relative;
   left: 0;
-  //background-color: #300032;
-	//border-style: solid;
 	border-width: 1px;
 	border-color: white;
   margin: 1em;

@@ -25,26 +25,35 @@ angular.module('networkProjectApp')
     				text: ''
     			};  
 
-
-                scope.$watch('data.selected', function (newValue) {
-                    if (newValue) {
-                    console.log(newValue);
-                    var data = {
-                        content: scope.data.selected
-                    };
-                    socket.sendDayVote(data);
+                scope.vot = function (type) {
+                    var data = {};
+                    if (type === 'day') {
+                        data.content = scope.data.selected;
+                        socket.sendDayVote(data);
+                    } else if (type === 'night') {
+                        data.content = scope.data.selected2;
+                        socket.sendNightVote(data);
                     }
-                });
+                };
+                // scope.$watch('data.selected', function (newValue) {
+                //     if (newValue) {
+                //     console.log(newValue);
+                //     var data = {
+                //         content: scope.data.selected
+                //     };
+                //     socket.sendDayVote(data);
+                //     }
+                // });
 
-                scope.$watch('data.selected2', function (newValue) {
-                    if (newValue) {
-                    console.log(newValue);
-                    var data = {
-                        content: scope.data.selected2
-                    };
-                    socket.sendNightVote(data);
-                    }
-                });
+                // scope.$watch('data.selected2', function (newValue) {
+                //     if (newValue) {
+                //     console.log(newValue);
+                //     var data = {
+                //         content: scope.data.selected2
+                //     };
+                //     socket.sendNightVote(data);
+                //     }
+                // });
 
         		scope.messageSend = function (e) {
         			var now,

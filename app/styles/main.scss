@@ -1,33 +1,25 @@
+html {
+  background-color: #000000;
+}
 #back{
   background-image: url('../../styles/blood.jpg');
-  margin-left: -10px;
-  margin-right: -10px;
 }
 
 #header {
-  margin-top: -10px;
-  margin-left: -10px;
-  margin-right: -10px;
+  padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 12px;
   height: 80px;
   margin-bottom: 0px;
   background-color: #06000a;
   position: relative;
 
   .constianer{
-    left: 20px;
-    top: 10px;
-    position: relative;
     display: inline-block;
-    max-height: 80px;
-    max-width: 300px;
-  }
-
-  .constianer img{
-    //padding-top: 10px;
-    //padding-left: 20px;
-    max-height: 80px;
-    max-width: 300px;
+    width: 300px;
+    height: 80px;
+    content: url('MAFIA_logo.jpg');
+    background-size: cover;
   }
 
   #timer{
@@ -44,50 +36,55 @@
 }
 
 #main-view {
-  margin-left: -10px;
-  margin-right: -10px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
   min-height: 700px;
-  //background-color: #06000a;
   padding-top: 5px;
 
   .item {
-    margin: 8px 12px 8px;
+    padding: 12px 20px 12px;
   }
 
   #main-disable {
     width: 100%;
-    height: 850px;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #FFFFFF;
+    background-color: #000000;
     opacity: 0.6;
     z-index: 100;
-    font-size: 36px;
-    line-height: 700px;
     text-align: center;
+    .dead-image {
+      margin-top: 240px;
+      content: url('../images/skull.png');
+    }
+    .vot-image {
+      margin-top: 240px;
+      content: url('../images/vot.png');
+      background-color: #FFFFFF;
+      opacity: 0.6;
+    }
+    .dead-text {
+      height: 36px;
+      color: #FFFFFF;
+      display: block;
+      font-size: 36px;
+    }
   }
 
   #player-list {
-    width: 200px;
+    width: 20%;
     height: 670px;
-    margin-left: 22px;
-    margin-right: 0px;
-    /*padding-right: 14px;
-    border-right-color: white;
-    border-right-width: 1px;
-    */
-    border-right-style: solid;
     z-index: 1;
+    padding-left: 22px;
   }
 
   #chat-field {
     /*//-webkit-flex: auto;*/
-    width: 600px;
+    width: 50%;
     height: 700px;
     margin-left: 20px;
     z-index: 1;
@@ -101,7 +98,8 @@
   }
 
   #votting-field {
-    width: 300px;
+    padding-top: 66px;
+    width: 30%;
     height: 700px;
     margin-right: 22px;
     z-index: 1;

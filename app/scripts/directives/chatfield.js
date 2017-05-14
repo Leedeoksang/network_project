@@ -26,7 +26,6 @@ angular.module('networkProjectApp')
         				scroller,
                         data;
         			if (e.key == 'Enter') {
-        				// send function needed
         				now = new Date();
                 data = {
                     // timestamp: now.getTime(),
@@ -37,8 +36,6 @@ angular.module('networkProjectApp')
         				// scope.generalchatting.push(scope.data.text)
         				scope.data.text = '';
                 socket.send(data);
-        				scroller = angular.element(document.querySelector('#chat-field-container'));
-        				scroller[0].scrollTop = scroller[0].scrollHeight;
         			}
         		};
       		}
