@@ -36,6 +36,16 @@ angular.module('networkProjectApp')
                     }
                 });
 
+                scope.$watch('data.selected2', function (newValue) {
+                    if (newValue) {
+                    console.log(newValue);
+                    var data = {
+                        content: scope.data.selected2
+                    };
+                    socket.sendNightVote(data);
+                    }
+                });
+
         		scope.messageSend = function (e) {
         			var now,
         				scroller,

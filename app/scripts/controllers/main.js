@@ -8,9 +8,10 @@
  * Controller of the networkProjectApp
  */
 angular.module('networkProjectApp')
-  	.controller('MainCtrl', function ($rootScope, $scope, socket, utils, $window) {
+  	.controller('MainCtrl', function ($timeout, $rootScope, $scope, socket, utils, $window) {
   		$scope.generalchatting = ['Please ready! Player1 will start game'];
       $scope.mafiachatting = [];
+      $scope.victimList = [];
 
       $rootScope.$on('generalchatting', function (e, data) {
         var scroller;
@@ -40,9 +41,21 @@ angular.module('networkProjectApp')
       });
       $rootScope.$on('night_voting', function (e, data) {
         $scope.nightVotingList = data['content'];
+        console.log($scope.nightVotingList);
       });
       $rootScope.$on('time', function (e, data) {
         $scope.time = data['content'];
+      });
+      $rootScope.$on('victim', function (e, data) {
+        var userInfo = utils.getUserInfo();
+
+        $scope.victimList.push(data['content']);
+        if ($scope.victimList.indexOf(userInfo.name) > -1) {
+          $scope.mainDisable = true;
+        }
+      });
+      $rootScope.$on('player_name', function (e, data) {
+        utils.setUserName(data['content']);
       });
 
       $window.onbeforeunload = function (event) {

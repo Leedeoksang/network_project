@@ -4,9 +4,9 @@
 </div>
 <div id="player-list-container">
   <ol class="players">
-    <li ng-repeat="item in playerlist">
+    <li ng-repeat="item in playerlist" ng-show="!isVictim(item)">
       <img id="bullet" src="../../styles/bullet.png" />
-      <span class="playertxt">{{item}}</span>
+      <span class="playertxt" ng-class="{'me': isMe(item)}">{{item}}</span>
     </li>
   </ol>
 </div>

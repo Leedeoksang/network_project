@@ -18,6 +18,9 @@ angular.module('networkProjectApp')
       this.setUserJob = function (job) {
         this.userInfo.job = job;
       };
+      this.setUserName = function (name) {
+        this.userInfo.name = name;
+      }
   		this.getUserInfo = function () {
   			return this.userInfo;
   		};
