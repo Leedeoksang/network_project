@@ -16,7 +16,7 @@ angular.module('networkProjectApp')
             },
       		link: function postLink(scope, element, attrs) {
       			var userInfo = utils.getUserInfo();
-  
+
     			scope.data = {
     				generalList: [],
     				mafiaList: [],
@@ -30,19 +30,36 @@ angular.module('networkProjectApp')
  	       				occupation: 'test',
         				text: 'test chat'
         			}]
-    			};  
+    			};
 
     			scope.ready = function () {
-                    var data = {};
-                    socket.ready(data);
+            var data = {};
+            socket.ready(data);
     			};
     			scope.start = function () {
-                    var data = {};
-                    socket.start(data);
+            var data = {};
+            socket.start(data);
     			};
-    			scope.clickGeneral = function (general) {
-    				// send general vot
-    			};
+
+          // // send general vot
+    			// scope.clickGeneral = function () {
+          //   var data = {
+          //     content: scope.data.selected
+          //   };
+          //   console.log("sendvote");
+          //   socket.sendvote(data);
+    			// };
+
+          scope.$watch('data.selected', function (newValue) {
+            if (newValue) {
+              console.log(newValue);
+              var data = {
+                content: scope.data.selected
+              };
+              socket.sendvote(data);
+            }
+          });
+
     			scope.clickMafia = function (mafia) {
     				// send mafia vot
     			};
