@@ -36,10 +36,10 @@ angular.module('networkProjectApp')
         utils.setUserJob(job);
       });
       $rootScope.$on('day_voting', function (e, data) {
-        $scope.dayVottingList = data['content'];
+        $scope.dayVotingList = data['content'];
       });
       $rootScope.$on('night_voting', function (e, data) {
-        $scope.nightVottingList = data['content'];
+        $scope.nightVotingList = data['content'];
       });
       $rootScope.$on('time', function (e, data) {
         $scope.time = data['content'];

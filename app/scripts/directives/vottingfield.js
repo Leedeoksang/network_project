@@ -13,8 +13,8 @@ angular.module('networkProjectApp')
       		restrict: 'E',
       		scope: {
                 'mafiachatting': '=',
-                'dayVottingList': '=',
-                'nightVottingList': '=',
+                'dayVotingList': '=',
+                'nightVotingList': '=',
                 'job': '=',
 
             },
@@ -24,6 +24,17 @@ angular.module('networkProjectApp')
     			scope.data = {
     				text: ''
     			};  
+
+
+                scope.$watch('data.selected', function (newValue) {
+                    if (newValue) {
+                    console.log(newValue);
+                    var data = {
+                        content: scope.data.selected
+                    };
+                    socket.sendDayVote(data);
+                    }
+                });
 
         		scope.messageSend = function (e) {
         			var now,

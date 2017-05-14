@@ -3,18 +3,15 @@
   <button id="start" class="button" ng-click="start()">START</button>
 </div>
 <div id="voting-list">
-  <div class="vott"
-  <div class="dropdown" id="general">
-    <button class="dropbtn">GENERAL VOTE</button>
-      <div class="dropdown-content" id="general">
-        <a ng-repeat="general in playerlist" ng-bind="general" ng-click="clickGeneral(general)"></a>
-      </div>
-  </div>
+  <select id="repeatSelect" ng-model="data.selected">
+    <option value="">GENERAL VOTE</option>
+    <option ng-repeat="general in dayVotingList" value="{{general}}"  >{{general}}</option>
+  </select>
 
   <div class="dropdown">
     <button class="dropbtn">MAFIA VOTE</button>
       <div class="dropdown-content">
-        <a ng-repeat="mafia in data.mafiaList" ng-bind="mafia.name" ng-click="clickMafia(mafia)"></a>
+        <a ng-repeat="mafia in nightVotingList" ng-bind="mafia" ng-click="clickMafia(mafia)"></a>
       </div>
   </div>
 </div>

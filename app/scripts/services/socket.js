@@ -47,12 +47,12 @@ angular.module('networkProjectApp')
         data.type = 'gameready';
         this.send(data);
       };
-      this.sendGeneralVote = function (data) {
-        data.type = 'general_votting';
+      this.sendDayVote = function (data) {
+        data.type = 'day_voting';
         this.send(data);
       };
       this.sendNightVote = function (data) {
-        data.type = 'night_votting';
+        data.type = 'night_voting';
         this.send(data);
       };
       this.close = function (data) {
