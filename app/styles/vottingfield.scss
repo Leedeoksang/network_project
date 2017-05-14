@@ -4,25 +4,26 @@
 }
 
 #ready{
-	right:6px;
+	right:7px;
 }
 
 #start{
-	left: 6px;
+	left:7px;
 }
 
 .button {
 	position: relative;
-	background-color:#636767;
+	background: transparent;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
-	border:1px solid #828585;
+	border:3px solid #e6e6e8;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color: #e6e6e8;
 	font-family:Arial;
 	font-size:17px;
+	font-weight: bold;
 	padding:12px 31px;
 	text-decoration:none;
 	text-shadow:2px 2px 0px #0d2908;
@@ -32,12 +33,14 @@
 }
 
 .button:hover {
-	background-color:#56242a;
+	//background-color:#56242a;
 }
 .button:active {
-	background-color:#56242a;
+	//background-color:#56242a;
 	position:relative;
 	top:1px;
+	color: #c43235;
+	background-image: url('../../styles/bloody-bullet-holes-2c.png');
 }
 
 #voting-list{
@@ -57,11 +60,12 @@
 }
 
 .dropbtn {
-    background-color:#4c4034;
-    color: red;
+    background: transparent;
+		border-radius:3px;
+    color: #c43235;
     padding: 16px;
     font-size: 16px;
-    border: none;
+		border:3px solid #e6e6e8;
     cursor: pointer;
 		width: 100%;
 		margin-bottom: 10px;
@@ -70,7 +74,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #300032;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -78,14 +82,22 @@
 }
 
 .dropdown-content a {
-    color: black;
+    color: #e6e6e8;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+		border:1px solid #e6e6e8;
+		//cursor: pointer;
 }
 
 .dropdown-content a:hover {
-	background-color: #6f665c;
+	background-color: black;
+	cursor: pointer;
+}
+
+.dropdown-content a:active {
+	color: #c43235;
+	background-image: url('../../styles/bloody-bullet-holes-2c.png');
 }
 
 .dropdown:hover .dropdown-content {
@@ -93,7 +105,7 @@
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #5d5348;
+    background-color: #300032;
 }
 
 .mafia-chat{
