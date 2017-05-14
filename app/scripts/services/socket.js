@@ -16,15 +16,14 @@ angular.module('networkProjectApp')
 
   		ws = ngSocket(URL + ':' + PORT);
   		ws.onMessage(function (data) {
-         console.log(data);
-         data=JSON.parse(data['data']);
-
+        data = JSON.parse(data['data']);
+        console.log(data)
+         console.log(data['content'])
   			if (data.type === 'generalchatting') {
-  				$rootScope.$emit('broadcast', data);
+  				$rootScope.$emit('generalchatting', data);
   			} else if (data.type === 'mafiachatting') {
-  				$rootScope.$emit('B', 'data');
+  				$rootScope.$emit('mafiachatting', data);
   			} else if (data.type === 'player_list') {
-          console.log("ccc");
   				$rootScope.$emit('player_list', data);
   			}
   		});
@@ -33,6 +32,14 @@ angular.module('networkProjectApp')
         console.log(data)
   			ws.send(data);
   		};
+      this.start = function (data) {
+        data.type = 'gamestart';
+        this.send(data);
+      }
+      this.ready = function (data) {
+        data.type = 'gameready';
+        this.send(data);
+      }
 
       this.sendVotting = function () {
 

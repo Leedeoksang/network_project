@@ -10,24 +10,17 @@ angular.module('networkProjectApp')
   	.directive('chatField', function (utils, socket) {
    		return {
       		templateUrl: './views/chatfield.html',
-      		restrict: 'E',
+      		restrict: 'EA',
       		scope: {
-                'chatBroadcast': '@'
+                'generalchatting': '='
             },
       		link: function postLink(scope, element, attrs) {
         		var userInfo = utils.getUserInfo();
-
+                scope.$watch('generalchatting', function (value) {
+                    console.log(value);
+                }, true);
         		scope.data = {
-        			text: '',
-        			chatList: [{
-        				timestamp: 0,
-        				occupation: 'test',
-        				text: 'test chat'
- 	       				},{
- 	       				timestamp: 0,
- 	       				occupation: 'test',
-        				text: 'test chat'
-        			}]
+        			text: ''
         		};
 
         		scope.messageSend = function (e) {

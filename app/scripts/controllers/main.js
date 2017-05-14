@@ -8,29 +8,24 @@
  * Controller of the networkProjectApp
  */
 angular.module('networkProjectApp')
-  	.controller('MainCtrl', function ($rootScope, $scope, socket, utils) {
+  	.controller('MainCtrl', function ($rootScope, $scope, socket, utils, $window) {
+  		$scope.generalchatting = [];
+      $scope.mafiachatting = [];
 
       $rootScope.$on('generalchatting', function (e, data) {
         console.log('main general');
-  			$scope.genearlbroadcast = data;
+  			$scope.generalchatting.push(data['content']);
+        console.log($scope.generalchatting);
   		});
   		$rootScope.$on('mafiachatting', function (e, data) {
         console.log('main mafia');
-        $scope.mafiabroadcast = data;
+        $scope.mafiachatting = data;
       });
-
       $rootScope.$on('player_list', function(e, data){
         console.log('player list');
-        $scope.playerlist = data.content;
+        console.log(data['content'])
+        $scope.playerlist = data['content'];
       });
-
-
-      // var data = JSON.parse("{timestamp: 1494695732767, text: abc, type: generalchatting, occupation: Doctor}");
-      // var data = JSON.parse("{'a': 'b'}")
-      // console.log(data)
-    //   $rootScope.$on('', function (e, data) {
-
-    //   });
 
       $scope.init = function () {
         var userInfo = {};
