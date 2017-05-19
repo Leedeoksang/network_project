@@ -4,29 +4,28 @@
 </div>
 <div id="voting-list">
   <div class="line">
+    <div class="line hide" ng-show="!dayvot"></div>
+    <div class="line hide" ng-show="dayvotComplete">Please wait others to vot</div>
     <select id="repeatSelect" ng-model="data.selected">
       <option value="">DAY VOTE</option>
       <option ng-repeat="day in dayVotingList" value="{{day}}" >{{day}}</option>
     </select>
     <span class="vot-button" ng-click="vot('day')">VOT</span>
   </div>
+
   <div class="line">
+    <div class="line hide" ng-show="!nightvot"></div>
+    <div class="line hide" ng-show="nightvotComplete">Please wait others to vot</div>
     <select id="repeatSelect" ng-model="data.selected2">
       <option value="">NIGHT VOTE</option>
       <option ng-repeat="night in nightVotingList" value="{{night}}"  >{{night}}</option>
     </select>
     <span class="vot-button" ng-click="vot('night')">VOT</span>
   </div>
-  <!-- <div class="dropdown">
-    <button class="dropbtn">MAFIA VOTE</button>
-      <div class="dropdown-content">
-        <a ng-repeat="mafia in nightVotingList" ng-bind="mafia" ng-click="clickMafia(mafia)"></a>
-      </div>
-  </div> -->
+
 </div>
 <div class="mafia-chat">
-  <!-- <div class="mafia-chat-disable" ng-show="job !== 'mafia'">Only for Mafia!</div> -->
-  <div class="mafia-chat-disable" ng-show="false">Only for Mafia!</div>
+  <div class="mafia-chat-disable" ng-show="job !== 'mafia'">Only for Mafia!</div>
   <div id="mafia-field-head">
     Mafia Chat
   </div>

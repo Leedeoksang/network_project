@@ -9,16 +9,18 @@
  */
 angular.module('networkProjectApp')
   	.service('socket', function (ngSocket, $rootScope) {
-   		var URL = 'ws://121.180.234.187',
+   		var URL = 'ws://119.202.81.112',
       // var URL = 'ws://141.223.60.58',
-  		PORT = '9001',
+  		PORT = '10000',
   		ws,
       victimList = [],
       me;
 
 
   		ws = ngSocket(URL + ':' + PORT);
+
   		ws.onMessage(function (data) {
+        console.log(data);
         if (victimList.indexOf(me) < 0) {
           console.log(data);
           data = JSON.parse(data['data']);
@@ -43,6 +45,12 @@ angular.module('networkProjectApp')
           } else if (data.type === 'player_name') {
             $rootScope.$emit('player_name', data);
             me = data['content'];
+          } else if (data.type === 'systemmsg') {
+            $rootScope.$emit('systemmsg', data);
+          } else if (data.type === 'votingend') {
+            $rootScope.$emit('votingend', data);
+          } else if (data.type === 'result') {
+            $rootScope.$emit('result', data);
           }
         }
    		});
@@ -71,3 +79,4 @@ angular.module('networkProjectApp')
         ws.close();
       };
    	});
+// 
