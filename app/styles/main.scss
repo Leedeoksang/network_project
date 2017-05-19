@@ -67,6 +67,16 @@ html {
       background-color: #FFFFFF;
       opacity: 0.6;
     }
+    .mafia-win-image {
+      margin-top: 200px;
+      content: url('../images/mafia_win.png');
+      opacity: 1.0;
+    }
+    .civilian-win-image {
+      margin-top: 200px;
+      content: url('../images/town_win.png');
+      opacity: 1.0;
+    }
     .dead-text {
       height: 36px;
       color: #FFFFFF;

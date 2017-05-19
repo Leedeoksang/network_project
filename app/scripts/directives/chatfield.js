@@ -12,7 +12,8 @@ angular.module('networkProjectApp')
       		templateUrl: './views/chatfield.html',
       		restrict: 'EA',
       		scope: {
-                'generalchatting': '='
+                'generalchatting': '=',
+                'dayChatDisable': '='
             },
       		link: function postLink(scope, element, attrs) {
         		var userInfo = utils.getUserInfo();

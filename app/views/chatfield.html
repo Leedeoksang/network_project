@@ -2,8 +2,9 @@
   GENERAL CHAT FIELD
 </div>
 <div id="chat-field-container">
-	<span class="chat-text" ng-repeat="chat in generalchatting track by $index">{{chat}}</span>
+	<span class="chat-text" ng-repeat="chat in generalchatting track by $index" ng-class="{'system': chat.type === 'system'}">{{chat.message}}</span>
 </div>
 <div id="chat-here">
+	<div class="chat-disable" ng-show="dayChatDisable">Not Available This Time</div>
 	<input type="text" ng-model="data.text" ng-keypress="messageSend($event)">
 </div>
